@@ -3,8 +3,8 @@
 
 ##### Tools 
 
-| Name        | Destcription           | Link  |
-| ------------- |:-------------:| -----:|
+| Name                    | Destcription           | Link  |
+| :---------------------- |:-------------| :-----|
 | React      | --- | https://reactjs.org/ |
 | Next.js      | --- | https://github.com/zeit/next.js |
 | Redux      | ---      |   https://redux.js.org/ |

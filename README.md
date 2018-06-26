@@ -3,6 +3,7 @@
 <img src="https://www.th2booking.com/wp-content/uploads/2018/05/1520414931-0456-related_list_classifieds.png" />
 
 ### คู่มือการเขียน React เพื่อพัฒนาบน Platform KPC
+สำหรับพนักงานใหม่ นักศึกษาฝึกงาน หรือผู้ที่ต้องการเรียนรู้การพัฒนาเว็บแอพลิเคชั่นด้วย React Framework
 
 ##### Tools 
 

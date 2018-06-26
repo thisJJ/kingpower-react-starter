@@ -8,7 +8,7 @@
 
 | Name                    | Destcription           | Link  |
 | :---------------------- |:-------------| :-----|
-| React      | --- | https://reactjs.org/ |
+| React      | --- | https://github.com/kingpowerclick/kpc-react-starter-kit/tree/master/react-tutorial |
 | Next.js      | --- | https://github.com/zeit/next.js |
 | Redux      | ---      |   https://redux.js.org/ |
 | redux-form      | ---      |   https://redux-form.com |

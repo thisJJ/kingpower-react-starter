@@ -1,6 +1,27 @@
 
 # React Tutorial
 
+### อ่านก่อนเรียนรู้
+
+<p><details>
+  <summary><b>การติดตั้ง Node.js, React และอื่น ๆ</b></summary>
+  <div>
+    ยังไม่มีข้อมูล
+  </div>
+</details></p>
+
+<p><details>
+  <summary><b>การทำแบบทดสอบ</b></summary>
+  <div>
+    ยังไม่มีข้อมูล</div>
+</details></p>
+
+<p><details>
+  <summary><b>เริ่มทำแบบทดสอบ</b></summary>
+  <div>
+    ยังไม่มีข้อมูล</div>
+</details></p>
+
 ### ทำความรู้จักโครงสร้าง React
 
 #### React Class

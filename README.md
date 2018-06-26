@@ -1,4 +1,4 @@
-# KPC Starter Kit
+# KINGPOWER CLICK Starter Kit
 ### คู่มือการเขียน React เพื่อพัฒนาบน Platform KPC
 
 ##### Tools 

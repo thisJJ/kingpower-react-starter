@@ -1,4 +1,7 @@
 # KINGPOWER CLICK Starter Kit
+
+<img src="https://www.th2booking.com/wp-content/uploads/2018/05/1520414931-0456-related_list_classifieds.png" />
+
 ### คู่มือการเขียน React เพื่อพัฒนาบน Platform KPC
 
 ##### Tools 

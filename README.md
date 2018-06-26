@@ -17,7 +17,7 @@
 | React      | --- | https://github.com/kingpowerclick/kpc-react-starter-kit/tree/master/react-tutorial |
 | Next.js      | --- | https://github.com/zeit/next.js |
 | Redux      | ---      |   https://redux.js.org/ |
-| redux-form      | ---      |   https://redux-form.com |
+| redux-form      | ใช้สำหรับจัดการฟอร์ม     |   https://redux-form.com |
 | GraphQL | ---      |    https://graphql.org/learn/ |
 | Ant Design      | ---      |   https://ant.design/ |
 | Lodash | A modern JavaScript utility library delivering modularity, performance & extras.      |    https://lodash.com/ |
@@ -25,5 +25,5 @@
 | Jest | JavaScript Testing      |    http://jestjs.io/ |
 | CyPress.js | testing for anything that runs in a browser     |    https://www.cypress.io/ |
 | Babel | ---      |    https://babeljs.io/ |
-| react-helmet | ---      |    https://github.com/nfl/react-helmet |
+| react-helmet | ใช้สำหรับการจัดการ SEO     |    https://github.com/nfl/react-helmet |
 | nuka-carousel | ---      |   https://github.com/FormidableLabs/nuka-carousel |

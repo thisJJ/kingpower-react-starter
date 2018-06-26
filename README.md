@@ -10,6 +10,7 @@
 | Redux      | ---      |   https://redux.js.org/ |
 | redux-form      | ---      |   https://redux-form.com |
 | GraphQL | ---      |    https://graphql.org/learn/ |
+| Ant Design      | ---      |   https://ant.design/ |
 | Lodash | A modern JavaScript utility library delivering modularity, performance & extras.      |    https://lodash.com/ |
 | SASS | Sass is the most mature, stable, and powerful professional grade CSS extension language in the world      |    https://sass-lang.com/ |
 | Jest | JavaScript Testing      |    http://jestjs.io/ |

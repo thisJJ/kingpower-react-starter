@@ -1,4 +1,4 @@
-# kpc-react-tutorial
+# KPC Starter Kit
 ### คู่มือการเขียน React เพื่อพัฒนาบน Platform KPC
 
 ##### Tools 

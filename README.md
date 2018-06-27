@@ -11,6 +11,19 @@
 ### คู่มือการเขียน React เพื่อพัฒนาบน Platform KPC
 สำหรับพนักงานใหม่ นักศึกษาฝึกงาน หรือผู้ที่ต้องการเรียนรู้การพัฒนาเว็บแอพลิเคชั่นด้วย React Framework
 
+##### การทำแบบทดสอบ
+- Fork repository ไปยัง Hithub ของคุณ
+- สร้างโฟลเดอร์ด้วยชื่อของคุณเองในโฟลเดอร์ "ส่งแบบทดสอบ"
+- เมื่อทำแบบทดสอบเสร็จ ให้ทำการ PR กลับมายัง Repository master ของเรา
+- ทางทีมงานจะทำการตรวจทานแบบทดสอบให้แก่คุณ
+
+<br />
+<div align="center">
+<h2>ร่วมงานกับเรา ... <a href="https://kingpowerclick.com/category/career/teamtech/">JOIN TEAM !!!!</a></h2>
+</div>
+
+<br />
+
 ##### Tools 
 
 | Name                    | Destcription           | Link  |

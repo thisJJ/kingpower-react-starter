@@ -93,7 +93,7 @@
       <a href="https://github.com/banchaSil898">
         <img width="100" src="https://s3-ap-southeast-1.amazonaws.com/wpimages.kingpowerclick.com/prod/2018/05/14180344/Image-00116.jpg" />
         <br />
-        <div>banchaSil898</div>
+        <div>bancha..</div>
       </a>
     </td>
     <td>

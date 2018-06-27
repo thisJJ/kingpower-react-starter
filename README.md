@@ -43,7 +43,7 @@
 | nuka-carousel | ---      |   - https://github.com/FormidableLabs/nuka-carousel |
 
 
-## Contributor
+## Collaborators & teams
 
 <table>
   <tr>

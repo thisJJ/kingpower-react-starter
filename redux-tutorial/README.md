@@ -12,7 +12,7 @@ npm start
 
 Tools Library
 ```
-npm i --save redux redux-devtools-extension redux-thunk redux-logger
+npm i --save redux redux-devtools-extension redux-thunk redux-logger react-redux prop-types
 ```
 
  #### ติดตั้ง Redux Store

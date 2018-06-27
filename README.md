@@ -48,5 +48,15 @@
       <br />
       <div><a href="https://github.com/siriwut">siriwut</a></div>
     </td>
+    <td>
+      <img width="100" src="https://s3-ap-southeast-1.amazonaws.com/wpimages.kingpowerclick.com/prod/2018/05/14180337/Image-00218.jpg" />
+      <br />
+      <div><a href="https://github.com/birdbida">birdbida</a></div>
+    </td>
+    <td>
+      <img width="100" src="https://s3-ap-southeast-1.amazonaws.com/wpimages.kingpowerclick.com/prod/2018/05/14180319/Image-00388.jpg" />
+      <br />
+      <div><a href="https://github.com/chutibuat">chutibuat</a></div>
+    </td>
   </tr>
 </table>

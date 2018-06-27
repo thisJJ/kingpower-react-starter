@@ -154,7 +154,7 @@ export default combineReducers({
 })
 ```
 
-เมื่อเราเปลี่ยนแปลงรูปร่าง Combile ใหม่ จะต้องกลับไปแก้ในส่วนของ Component ที่ทำการ mapStateToProps ด้วย รวมถึงการเรียกใช้ Action
+เมื่อเราเปลี่ยนแปลงรูปร่าง Combile ใหม่ จะต้องกลับไปแก้ในส่วนของ Container ที่ทำการ mapStateToProps ด้วย รวมถึงการเรียกใช้ Action
 
 ```javascript
 // ./container/Kingpower.js

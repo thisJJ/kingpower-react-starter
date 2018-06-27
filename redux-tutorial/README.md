@@ -8,7 +8,7 @@ cd my-app
 npm start
 ```
 
-### Redux Structure
+#### Redux Structure
 
 Tools Library
 ```

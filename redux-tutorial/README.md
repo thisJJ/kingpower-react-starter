@@ -15,24 +15,6 @@ Tools Library
 npm i --save redux redux-devtools-extension redux-thunk redux-logger
 ```
 
-#### ส่วนของข้อมูลที่จัดเก็บใน Reducer store
-สามารถที่จะเชื่อมต่อกับ reducer อื่น ๆ ได้จากตรงนี้
-```javascript
-// reducers.js
-import { combineReducers } from 'redux'
-
-const count = () => ({
-  lastUpdate: 0,
-  light: false,
-  count: 0
-})
-
-export default combineReducers({
-  count: count
-})
-```
-
-
  #### ติดตั้ง Redux Store
 ```javascript
 // store.js
@@ -54,6 +36,24 @@ export default (initialState = {}) => {
 
   return createStore(rootReducer, initialState, composeWithDevTools(reduxMiddleware))
 }
+```
+
+
+#### ส่วนของข้อมูลที่จัดเก็บใน Reducer store
+สามารถที่จะเชื่อมต่อกับ reducer อื่น ๆ ได้จากตรงนี้
+```javascript
+// reducers.js
+import { combineReducers } from 'redux'
+
+const count = () => ({
+  lastUpdate: 0,
+  light: false,
+  count: 0
+})
+
+export default combineReducers({
+  count: count
+})
 ```
 
 #### การทำ Provider เพื่อให้ App เชื่อมต่อกับ Redux store

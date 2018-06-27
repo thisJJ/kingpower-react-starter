@@ -1,6 +1,7 @@
 # 01 create reduc store (แบบทดสอบ)
 
 สร้างหน้าเว็บที่มีลักษณะดังต่อไปนี้
+<br />
 <img src="https://imgur.com/98CKPtf.jpg" height="800" />
 <br />
 #### การทำงาน

@@ -1,5 +1,13 @@
 # Redux Tutorial
 
+
+## ติดตั้ง React
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
 ### Redux Structure
 
 Tools Library

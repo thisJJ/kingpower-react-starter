@@ -1,7 +1,7 @@
 # Redux Tutorial
 
 
-## ติดตั้ง React
+#### ติดตั้ง React
 ```
 npx create-react-app my-app
 cd my-app

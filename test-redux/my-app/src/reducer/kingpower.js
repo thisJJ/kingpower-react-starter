@@ -9,7 +9,7 @@ const reducer = (state = defaultState, { type, payload }) => {
     case UPDATE_TEXT : {
       const newState = state
       newState.text = payload.text
-      return newState
+      return { ...state, ...newState }
     }
     default: {
       return state

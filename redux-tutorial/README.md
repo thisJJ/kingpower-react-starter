@@ -139,7 +139,8 @@ const reducer = (state = defaultState, { type, payload }) => {
       const newState = state
       newState.count = payload.count
       return newState
-    default:
+    }
+    default: {
       return state
     }
   }

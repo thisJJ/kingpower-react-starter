@@ -27,3 +27,21 @@
 | Babel | ---      |    https://babeljs.io/ |
 | react-helmet | ใช้สำหรับการจัดการ SEO     |    https://github.com/nfl/react-helmet |
 | nuka-carousel | ---      |   https://github.com/FormidableLabs/nuka-carousel |
+
+
+## Contributor
+
+<table>
+  <tr>
+    <td>
+      <img width="100" src="https://s3-ap-southeast-1.amazonaws.com/wpimages.kingpowerclick.com/prod/2018/05/14180338/Image-00141.jpg" />
+      <br />
+      <div><a href="https://github.com/thisJJ">ThisJJ</a></div>
+    </td>
+    <td>
+      <img width="100" src="https://s3-ap-southeast-1.amazonaws.com/wpimages.kingpowerclick.com/prod/2018/05/14180335/Image-00209.jpg" />
+      <br />
+      <div><a href="https://github.com/soulcruelz">P</a></div>
+    </td>
+  </tr>
+</table>

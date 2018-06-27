@@ -45,99 +45,115 @@ export default (initialState = {}) => {
 // reducers.js
 import { combineReducers } from 'redux'
 
-const count = () => ({
-  lastUpdate: 0,
-  light: false,
-  count: 0
+const reducer = () => ({
+  text: 'Hello Kingpower!'
 })
 
 export default combineReducers({
-  count: count
+  kingpower: reducer
 })
 ```
 
 #### การทำ Provider เพื่อให้ App เชื่อมต่อกับ Redux store
 
 ```javascript
-// App.js
+// withRedux.js
 import React, { Component } from 'react'
 import { connect, Provider } from 'react-redux'
-import initStore from './store' // store.js
-import KingpowerContainer from './container/Kingpower' // Kingpower.js
+import buildStore from './store'
+ 
+const store = buildStore()
 
-const store = initStore()
-
-export default class App extends Component {
-  render(){
-    return (
-      <Provider store={ store }>
-        <KingpowerContainer { ... this.props } />
-      </Provider>
-    )
+export default (...connectParams) => ComposedComponent => {
+  const ConnectedComponent = connect(...connectParams)(ComposedComponent)
+ 
+  const WithRedux = class extends Component {
+    render() {
+      return (
+        <Provider store={store}>
+          <ConnectedComponent { ...this.props } />
+        </Provider>
+      )
+    }
   }
+ 
+  return WithRedux
 }
-
 ```
 
 #### การดึงข้อมูลจาก Redux store มาใช้งาน
 ``` javascript
+// App.js
+import React, { Component } from 'react'
+import KingpowerContainer from './container/Kingpower' // Kingpower.js
+
+export default class App extends Component {
+  render(){
+    return (
+      <KingpowerContainer />
+    )
+  }
+}
+
 // ./container/Kingpower.js
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { compose } from 'redux'
+import { compose} from 'redux'
+import withRedux from '../withRedux' // withRedux.js
 
 class KingpowerContainer extends Component {
   static propTypes = {
-    count: PropTypes.number
+    text: PropTypes.string
   }
 
   render(){
     return(
-      <div>{ this.props.count }</div>
+      <div>{ this.props.text }</div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  count: state.count
+  text: state.containers.kingpower.text
 })
 
 export default compose(
-  mapStateToProps
-)
+  withRedux(
+    mapStateToProps
+  )
+)(KingpowerContainer)
 
 ```
 
 #### การสร้าง Action เพื่อเปลี่ยนแปลงข้อมูลใน Redux store
 ```javascript
-// ./action/count.js
+// ./action/kingpower.js
 
 // สร้าง Action type
-export const UPDATE_COUNT = 'APP/KINGPOWER/UPDATE_COUNT'
+export const UPDATE_TEXT = 'APP/KINGPOWER/UPDATE_TEXT'
 // สร้าง Action Creator
-export const onUpdateCount = (count) => {
+export const onUpdateText = (text) => {
   return {
-    type: UPDATE_COUNT,
+    type: UPDATE_TEXT,
     payload: {
-      count
+      text
     }
   }
 }
 ```
 ```javascript
-// ./reducer/count.js
-
-import { UPDATE_COUNT } from './action/count' // count.js
+// ./reducer/kingpower.js
+import { UPDATE_TEXT } from '../action/kingpower' // kingpower.js
 
 const defaultState = {
-  count: 0
+  text: 'Hello Kingpower!'
 }
 
 const reducer = (state = defaultState, { type, payload }) => {
   switch(type) {
-    case UPDATE_COUNT : {
+    case UPDATE_TEXT : {
       const newState = state
-      newState.count = payload.count
+      newState.text = payload.text
       return newState
     }
     default: {
@@ -156,10 +172,10 @@ export default reducer
 ```javascript
 // reducers.js
 import { combineReducers } from 'redux'
-import countReducer from './reducers/count' // count.js
+import kingpowerReducer from './reducer/kingpower' // kingpower.js
 
 export default combineReducers({
-  countReducer: countReducer
+  kingpower: kingpowerReducer
 })
 ```
 
@@ -169,32 +185,35 @@ export default combineReducers({
 // ./container/Kingpower.js
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { compose, bindActionCreators } from 'redux'
-import { onUpdateCount } from './action/count' // count.js
-
-class KingpowerContainer extends Component {
-  static propTypes = {
-    count: PropTypes.number,
-    onUpdateCount: PropTypes.func
-  }
-
-  render(){
-    return(
-      <div onClick={ () => this.props.onUpdateCount( this.props.count + 1 )}>{ this.props.count }</div>
-    )
-  }
-}
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import {
+  onUpdateText
+} from '../action/kingpower'
 
 const mapStateToProps = (state) => ({
-  count: state.countReducer.count
+  text: state.containers.kingpower.text
 })
 
 const mapActionToProps = (dispatch) => bindActionCreators({
-  onUpdateCount
-})
+  onUpdateText
+}, dispatch)
 
-export default compose(
+export default connect(
   mapStateToProps,
   mapActionToProps
-)
+)(class KingpowerContainer extends Component {
+  static propTypes = {
+    text: PropTypes.string,
+    onUpdateText: PropTypes.func,
+  }
+
+  render(){
+    console.log('this.props.text', this.props.text)
+    return(
+      <div onClick={ () => this.props.onUpdateText('Hello Kingpower Click!')}>{ this.props.text }</div>
+    )
+  }
+})
+
 ```

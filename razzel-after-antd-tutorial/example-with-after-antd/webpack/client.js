@@ -4,45 +4,40 @@ const antdTheme = require('../src/theme') // <- Include variables to override an
 const extractLess = new ExtractTextPlugin({
   filename: 'static/css/[name].[contenthash].css',
   disable: process.env.NODE_ENV === 'development', // disable this during development
-})
+});
 
-module.exports = (config, webpack) => ({
-  ...config,
-  module: {
-    ...config.module,
-    rules: [
-      ...config.module.rules,
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          plugins: [['import', { libraryName: 'antd', style: true }]],
+module.exports = (config, webpack) => {
+  const appConfig = Object.assign({}, config);
+  appConfig.module.rules.push({
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader',
+    options: {
+      plugins: [['import', { libraryName: 'antd', style: true }]],
+    }
+  });
+
+  appConfig.module.rules.push({
+    test: /\.less$/,
+    // use the ExtractTextPlugin instance
+    use: extractLess.extract({
+      use: [
+        {
+          loader: 'css-loader',
         },
-      },
-      {
-        test: /\.less$/,
-        // use the ExtractTextPlugin instance
-        use: extractLess.extract({
-          use: [
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'less-loader',
-              options: {
-                modifyVars: antdTheme,
-              },
-            },
-          ],
-          // use style-loader in development
-          fallback: 'style-loader',
-        }),
-      },
-    ],
-  },
-  plugins: [
-    ...config.plugins,
-    extractLess, // <- Add the ExtractTextPlugin instance here
-  ],
-})
+        {
+          loader: 'less-loader',
+          options: {
+            modifyVars: antdTheme,
+          },
+        },
+      ],
+      // use style-loader in development
+      fallback: 'style-loader',
+    }),
+  });
+
+  appConfig.plugins.push(extractLess);
+  
+  return appConfig;
+};

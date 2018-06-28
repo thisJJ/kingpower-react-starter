@@ -1,7 +1,7 @@
 # Redux Tutorial
 
 
-#### ติดตั้ง React
+#### Setup React
 ```
 npx create-react-app my-app
 cd my-app
@@ -15,7 +15,7 @@ Tools Library
 npm i --save redux redux-devtools-extension redux-thunk redux-logger react-redux prop-types
 ```
 
- #### ติดตั้ง Redux Store
+ #### Setup Redux Store
 ```javascript
 // store.js
 
@@ -39,8 +39,8 @@ export default (initialState = {}) => {
 ```
 
 
-#### ส่วนของข้อมูลที่จัดเก็บใน Reducer store
-สามารถที่จะเชื่อมต่อกับ reducer อื่น ๆ ได้จากตรงนี้
+#### Combine Reducer store
+You can combine other store in file. 
 ```javascript
 // reducers.js
 import { combineReducers } from 'redux'
@@ -54,7 +54,7 @@ export default combineReducers({
 })
 ```
 
-#### การทำ Provider เพื่อให้ App เชื่อมต่อกับ Redux store
+#### Make Provider for App connect with Redux store
 
 ```javascript
 // withRedux.js
@@ -125,7 +125,7 @@ export default compose(
 
 ```
 
-#### การสร้าง Action เพื่อเปลี่ยนแปลงข้อมูลใน Redux store
+#### Creare Action for update Redux store
 ```javascript
 // ./action/kingpower.js
 
@@ -166,7 +166,7 @@ const reducer = (state = defaultState, { type, payload }) => {
 export default reducer
 ```
 
-#### การ Combine reducer หรือ รวม Reducer เป็นกลุ่มเดียว
+#### Update combine reducer
 
 
 ```javascript
@@ -179,7 +179,7 @@ export default combineReducers({
 })
 ```
 
-เมื่อเราเปลี่ยนแปลงรูปร่าง Combile ใหม่ จะต้องกลับไปแก้ในส่วนของ Container ที่ทำการ mapStateToProps ด้วย รวมถึงการเรียกใช้ Action
+#### Add action
 
 ```javascript
 // ./container/Kingpower.js

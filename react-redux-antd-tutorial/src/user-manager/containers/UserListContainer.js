@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Table, Icon, Divider, Row, Col, Button } from 'antd'
+import { deleteUser } from '../reducers/user-list-reducer';
 
 const { Column, ColumnGroup } = Table
 
@@ -10,7 +11,9 @@ const mapStateToProps = state => ({
   userList: state.userManager.userList.userList
 })
 
-const mapDispatchToProps = null
+const mapDispatchToProps = dispatch => ({
+  deleteUser: key => dispatch(deleteUser(key))
+})
 
 class UserListContainer extends Component {
   static propTypes = {
@@ -63,7 +66,7 @@ class UserListContainer extends Component {
                   <Divider type="vertical" />
                   <a href="javascript:;">Edit</a>
                   <Divider type="vertical" />
-                  <a href="javascript:;">Delete</a>
+                  <a href="javascript:;" onClick={() => this.props.deleteUser(record.key) }>Delete</a>
                   <Divider type="vertical" />
                 </span>
               )}

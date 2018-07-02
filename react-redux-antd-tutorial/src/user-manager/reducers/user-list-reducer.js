@@ -2,6 +2,8 @@ import shortid from 'shortid'
 
 export const LOAD_USER_LIST = 'user-manager/user-list/LOAD_USER_LIST'
 export const ADD_USER = 'user-manager/user-list/ADD_USER'
+export const DELETE_USER = 'user-manager/user-list/DELETE_USER'
+export const EDIT_USER = 'user-manager/user-list/EDIT_USER'
 
 const apiData = [{
   key: '1',
@@ -25,6 +27,8 @@ export const initialState = {
 }
 
 export default function reducer(state = initialState, action) {
+  console.log('state', state)
+  console.log('action: ', action)
   switch(action.type) {
     case LOAD_USER_LIST:
       return {
@@ -41,6 +45,25 @@ export default function reducer(state = initialState, action) {
         ...state,
         userList: userList,
       }
+    case DELETE_USER:
+      return Object.assign({}, state, {
+        userList: state.userList.filter(user => user.key !== action.key)
+      })
+    case EDIT_USER:
+      return Object.assign({}, state, {
+        userList: state.userList.map(user => {
+          const {key, firstName, lastName, address} = action.payload.user
+          if (user.key !== key) {
+            return user
+          }
+
+          return Object.assign({}, user, {
+            firstName,
+            lastName,
+            address,
+          })
+        })
+      })
     default:
       return state
   }
@@ -62,6 +85,23 @@ export const addUser = (user) => ({
       firstName: user.firstName,
       lastName: user.lastName,
       address: user.address || ''
+    }
+  }
+})
+
+export const deleteUser = (key) => ({
+  type: DELETE_USER,
+  key
+})
+
+export const editUser = (user) => ({
+  type: EDIT_USER,
+  payload: {
+    user: {
+      key: user.key,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      address: user.address
     }
   }
 })

@@ -1,11 +1,11 @@
 ## React router
 
-#### Usage
+### Usage
 ```
 import { .... } from 'react-router-dom'
 ```
 
-#### Function
+### Function
 
 ```javascript
 // src/routers.js
@@ -59,9 +59,9 @@ export default [
 </Switch>
 ```
 ---------
-#### Route Props
+### Route Props
 ---------
-##### exact
+#### exact
 ```javascript
 default: false
 ```
@@ -69,7 +69,8 @@ default: false
 if the entire URL was matched 
 </pre>
 
-Example
+###### Example
+
 ```javascript
 // fixed params
 <Route
@@ -85,7 +86,111 @@ Fail url : www.kingpower.com/about/a/b
 Fail url : www.kingpower.com/about/a/b/c
 
 ```
+
+
+```javascript
+// this.props
+// www.kingpower.com/about/a
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a"
+  }
+}
+
+// www.kingpower.com/about/a/b
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a/b"
+  }
+}
+
+// www.kingpower.com/about/a/b/c
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a/b/c"
+  }
+}
+```
+
 ---------
+
+
+```javascript
+// fixed params
+<Route
+  path="/about/:component/:id/:name"
+  exact={ true }
+  component={ About }
+/>
+```
+
+```text
+True url : www.kingpower.com/about/a
+Fail url : www.kingpower.com/about/a/b
+Fail url : www.kingpower.com/about/a/b/c
+
+```
+
+
+```javascript
+// this.props
+// www.kingpower.com/about/a
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a"
+  }
+}
+
+// www.kingpower.com/about/a/b
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+      id: "b"
+    },
+    path: "/about/:component",
+    url: "about/a/b"
+  }
+}
+
+// www.kingpower.com/about/a/b/c
+{
+  match: {
+    isExact: true,
+    params: {
+      component: "a",
+      id: "b",
+      name: "c"
+    },
+    path: "/about/:component",
+    url: "about/a/b/c"
+  }
+}
+```
+
+---------
+
 ```javascript
 // relative params
 <Route
@@ -99,5 +204,44 @@ Fail url : www.kingpower.com/about/a/b/c
 True url : www.kingpower.com/about/a
 True url : www.kingpower.com/about/a/b
 True url : www.kingpower.com/about/a/b/c
+```
+
+```javascript
+// this.props
+// www.kingpower.com/about/a
+{
+  match: {
+    isExact: false,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a"
+  }
+}
+
+// www.kingpower.com/about/a/b
+{
+  match: {
+    isExact: false,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a/b"
+  }
+}
+
+// www.kingpower.com/about/a/b/c
+{
+  match: {
+    isExact: false,
+    params: {
+      component: "a",
+    },
+    path: "/about/:component",
+    url: "about/a/b/c"
+  }
+}
 ```
 ---------

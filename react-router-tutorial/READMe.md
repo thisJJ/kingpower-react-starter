@@ -87,7 +87,7 @@ Fail url : www.kingpower.com/about/a/b/c
 ```
 ---------
 ```javascript
-// absolute params
+// relative params
 <Route
   path="/about/:component"
   exact={ false }

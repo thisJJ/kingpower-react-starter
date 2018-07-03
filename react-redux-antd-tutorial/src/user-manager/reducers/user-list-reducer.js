@@ -27,8 +27,6 @@ export const initialState = {
 }
 
 export default function reducer(state = initialState, action) {
-  console.log('state', state)
-  console.log('action: ', action)
   switch(action.type) {
     case LOAD_USER_LIST:
       return {
@@ -58,6 +56,7 @@ export default function reducer(state = initialState, action) {
           }
 
           return Object.assign({}, user, {
+            key,
             firstName,
             lastName,
             address,

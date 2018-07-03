@@ -64,7 +64,7 @@ class UserListContainer extends Component {
                 <span>
                   <a href="javascript:;">Action 一 {record.name}</a>
                   <Divider type="vertical" />
-                  <a href="javascript:;">Edit</a>
+                  <Link to={`/user-manager/edit/${ record.key }`}>Edit</Link>
                   <Divider type="vertical" />
                   <a href="javascript:;" onClick={() => this.props.deleteUser(record.key) }>Delete</a>
                   <Divider type="vertical" />

@@ -18,7 +18,7 @@ export default [
         component: UserAddView
       },
       {
-        path: '/user-manager/edit',
+        path: '/user-manager/edit/:key',
         component: UserEditView
       }
     ]

@@ -141,8 +141,9 @@ Fail url : www.kingpower.com/about/a/b/c
 
 ```text
 True url : www.kingpower.com/about/a
-Fail url : www.kingpower.com/about/a/b
-Fail url : www.kingpower.com/about/a/b/c
+True url : www.kingpower.com/about/a/b
+True url : www.kingpower.com/about/a/b/c
+Fail url : www.kingpower.com/about/a/b/c/d
 
 ```
 

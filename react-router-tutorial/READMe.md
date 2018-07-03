@@ -63,7 +63,7 @@ export default [
 ---------
 ##### exact
 ```javascript
-default: true
+default: false
 ```
 <pre>
 if the entire URL was matched 
@@ -71,6 +71,7 @@ if the entire URL was matched
 
 Example
 ```javascript
+// fixed params
 <Route
   path="/about/:component"
   exact={ true }
@@ -79,10 +80,14 @@ Example
 ```
 
 ```text
-True url : www.kingpower.com/about/a/b/b
+True url : www.kingpower.com/about/a
+Fail url : www.kingpower.com/about/a/b
+Fail url : www.kingpower.com/about/a/b/c
+
 ```
 ---------
 ```javascript
+// absolute params
 <Route
   path="/about/:component"
   exact={ false }
@@ -92,6 +97,7 @@ True url : www.kingpower.com/about/a/b/b
 
 ```text
 True url : www.kingpower.com/about/a
-False url : www.kingpower.com/about/a/b/b
+True url : www.kingpower.com/about/a/b
+True url : www.kingpower.com/about/a/b/c
 ```
 ---------

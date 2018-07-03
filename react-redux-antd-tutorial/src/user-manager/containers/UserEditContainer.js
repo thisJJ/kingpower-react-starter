@@ -11,31 +11,20 @@ const FormItem = Form.Item;
 const Option = Select.Option;
 const { TextArea } = Input
 
-const mapStateToProps = state => ({
-    userList: state.userManager.userList.userList
-})
-  
+const mapStateToProps = (state, props) => {
+  const { params: { key } } = props.match
+  const { userList } = state.userManager.userList
+
+  const user = userList.find((user) => user.key === key) 
+  return {
+    user
+  }
+}
 const mapDispatchToProps = dispatch => bindActionCreators({
-    editUser
+  editUser
 }, dispatch)
 
 class UserEditContainer extends React.Component {
-
-  componentDidMount = () => {
-    this.setInitialForm()
-  }
-
-  setInitialForm = (userList) => {
-    const editKey = this.props.match.params.key
-    let findUser = this.props.userList.find(user => user.key === editKey)
-    const { setFieldsValue } = this.props.form
-    setFieldsValue({
-         firstName: findUser.firstName,
-         lastName: findUser.lastName,
-         address: findUser.address
-    })
-  }
-
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -109,5 +98,28 @@ export default compose(
         mapStateToProps,
         mapDispatchToProps
     ),
-    Form.create()
+    Form.create({
+      mapPropsToFields(props){
+        console.log(props)
+
+        if (!props.user) {
+          return {}
+        }
+
+        return {
+          firstName: Form.createFormField({
+            ...props.user,
+            value: props.user.firstName
+          }),
+          lastName: Form.createFormField({
+            ...props.user,
+            value: props.user.lastName
+          }),
+          address: Form.createFormField({
+            ...props.user,
+            value: props.user.address
+          }),
+        }
+      }
+    })
 )(UserEditContainer)

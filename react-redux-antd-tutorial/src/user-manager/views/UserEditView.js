@@ -4,7 +4,7 @@ import UserEditContainer from '../containers/UserEditContainer'
 export default class UserEditView extends Component {
   render() {
     return (
-      <UserEditContainer/>
+      <UserEditContainer { ...this.props } />
     )
   }
 }

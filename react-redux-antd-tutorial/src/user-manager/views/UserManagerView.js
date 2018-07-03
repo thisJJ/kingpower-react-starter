@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
 import { Layout, Button, Row, Col, Menu, Breadcrumb } from 'antd'
 
 import { bindActionCreators } from 'redux'
@@ -36,7 +36,10 @@ class UserManagerView extends Component {
     const { location } = this.props
 
     const paths = location.pathname.split('/')
-    const path = paths[paths.length - 1]
+    let path = paths[paths.length - 1] 
+    // if(!Number.isNaN(path)) {
+    //   path = 'edit'
+    // }
 
     return (
       <Breadcrumb separator=">">
@@ -57,6 +60,13 @@ class UserManagerView extends Component {
             </Link>
           </Breadcrumb.Item>
         }
+        {/* { path === 'edit' &&
+          <Breadcrumb.Item>
+            <Link to="/user-manager/edit">
+              Edit User
+            </Link>
+          </Breadcrumb.Item>
+        } */}
       </Breadcrumb>
     )
   }

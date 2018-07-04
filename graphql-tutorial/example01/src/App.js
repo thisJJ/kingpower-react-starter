@@ -3,11 +3,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as CounterActions from '~/actions';
-
 import logo from '~/static/react.svg';
 import '~/static/Home.css';
 // import RouterWithSubRoutes from '~/RouterWithSubRoutes'
-
+import About from '~/containers/About/container'
+import Product from '~/containers/Product/container'
 import { NavLink, Route, Switch } from 'react-router-dom';
 class App extends React.Component {
   static async getInitialProps({ req, res, match}) {
@@ -43,12 +43,14 @@ class App extends React.Component {
             <NavLink to="/about/component">About and Home Container</NavLink>
           </li>
           <li>
+            <NavLink to="/product">Get Product</NavLink>
+          </li>
+          <li>
             <NavLink to="/register">Register</NavLink>
           </li>
         </ul>
         <div>
-          {/* <RouteWithSubRoutes routes={  } /> */}
-          {/* <Switch>
+          <Switch>
             <Route
               path="/"
               exact
@@ -64,11 +66,23 @@ class App extends React.Component {
               exact
               component={ About }
             />
+
+            <Route
+              path="/product"
+              exact
+              component={ Product }
+            />
+
+            <Route
+              path="/product/:sku/:lang"
+              exact
+              component={ Product }
+            />
             <Route
               path="/:error"
               render={() => <div>Is Error</div>}
             />
-          </Switch> */}
+          </Switch>
         </div>
       </div>
     );

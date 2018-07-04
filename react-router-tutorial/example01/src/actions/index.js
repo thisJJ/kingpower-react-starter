@@ -1,9 +1,14 @@
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const LOAD_COUNTER = 'LOAD_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 export const DECREMENT_COUNTER_SUCCESS = 'DECREMENT_COUNTER_SUCCESS';
 
 export const increment = () => ({
   type: INCREMENT_COUNTER,
+});
+
+export const loadCount = () => ({
+  type: LOAD_COUNTER,
 });
 
 export const decrement = () => ({

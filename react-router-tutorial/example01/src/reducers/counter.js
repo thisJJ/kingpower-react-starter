@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER, DECREMENT_COUNTER_SUCCESS } from '../actions';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER, DECREMENT_COUNTER_SUCCESS, LOAD_COUNTER } from '../actions';
 
 const initialState = {
   count : 0
@@ -6,6 +6,10 @@ const initialState = {
 
 export default (state = {...initialState}, action) => {
   switch (action.type) {
+    case LOAD_COUNTER:
+      return { 
+        count: 999
+      }
     case INCREMENT_COUNTER:
       return { 
         count: state.count + 1 

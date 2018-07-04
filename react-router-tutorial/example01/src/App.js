@@ -18,6 +18,12 @@ class App extends React.Component {
 
     return { };
   }
+
+  componentDidMount = () => {
+    console.log('componentDidMount', this.props)
+    this.props.loadCount()
+  }
+
   render() {
     console.log('App props', this.props)
     return (
@@ -50,7 +56,7 @@ class App extends React.Component {
             <Route
               path="/about"
               exact
-              render={() => <div>Is about</div>}
+              render={() => <div>Is count { this.props.count }</div>}
             />
             <Route
               path="/about/:component"

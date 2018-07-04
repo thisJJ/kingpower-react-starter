@@ -63,7 +63,6 @@ class UserManagerView extends Component {
 
   render() {
     const { routes } = this.props
-    console.log(this.props)
 
     return (
       <Layout>

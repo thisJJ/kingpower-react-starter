@@ -5,12 +5,10 @@ export default function RouteWithSubRoutes({ route }) {
   return (
     <Route
       path={route.path}
-      render={routeProps => {
-        console.log('RouteWithSubRoutes', routeProps)
-        return(
+      render={routeProps => (
         // pass the sub-routes down to keep nesting
         <route.component {...routeProps} routes={route.routes} />
-      )}}
+      )}
     />
   )
 }

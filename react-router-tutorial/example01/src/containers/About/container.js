@@ -13,6 +13,7 @@ class About extends React.Component {
 
     return {  };
   }
+
   render() {
     console.log('About props', this.props)
     return (

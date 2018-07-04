@@ -20,7 +20,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ad8f4ef56e641a0f4c5c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9eec80cc18f41001a019"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -935,9 +935,8 @@ if(true) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__static_react_svg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__static_react_svg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__static_Home_css__ = __webpack_require__("./src/static/Home.css");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__static_Home_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__static_Home_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__containers_About_container__ = __webpack_require__("./src/containers/About/container.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_react_router_dom__ = __webpack_require__("react-router-dom");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_react_router_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_react_router_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_router_dom__ = __webpack_require__("react-router-dom");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_router_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_react_router_dom__);
 
 
 
@@ -954,7 +953,7 @@ var _jsxFileName = '/Users/tj/Projects/kpc-react-starter-kit/graphql-tutorial/ex
 
 
 
-
+// import RouterWithSubRoutes from '~/RouterWithSubRoutes'
 
 
 
@@ -981,9 +980,7 @@ var App = function (_React$Component) {
   __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_createClass___default()(App, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
-
-      console.log('App props', this.props);
+      console.log('Home props', this.props);
       return __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
         'div',
         { className: 'Home', __source: {
@@ -1030,7 +1027,7 @@ var App = function (_React$Component) {
               }
             },
             __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_14_react_router_dom__["NavLink"],
+              __WEBPACK_IMPORTED_MODULE_13_react_router_dom__["NavLink"],
               { to: '/', __source: {
                   fileName: _jsxFileName,
                   lineNumber: 37
@@ -1048,7 +1045,7 @@ var App = function (_React$Component) {
               }
             },
             __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_14_react_router_dom__["NavLink"],
+              __WEBPACK_IMPORTED_MODULE_13_react_router_dom__["NavLink"],
               { to: '/about', __source: {
                   fileName: _jsxFileName,
                   lineNumber: 40
@@ -1066,7 +1063,7 @@ var App = function (_React$Component) {
               }
             },
             __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_14_react_router_dom__["NavLink"],
+              __WEBPACK_IMPORTED_MODULE_13_react_router_dom__["NavLink"],
               { to: '/about/component', __source: {
                   fileName: _jsxFileName,
                   lineNumber: 43
@@ -1084,7 +1081,7 @@ var App = function (_React$Component) {
               }
             },
             __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_14_react_router_dom__["NavLink"],
+              __WEBPACK_IMPORTED_MODULE_13_react_router_dom__["NavLink"],
               { to: '/register', __source: {
                   fileName: _jsxFileName,
                   lineNumber: 46
@@ -1094,93 +1091,12 @@ var App = function (_React$Component) {
             )
           )
         ),
-        __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-          'div',
-          {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 49
-            }
-          },
-          __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_14_react_router_dom__["Switch"],
-            {
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 50
-              }
-            },
-            __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_react_router_dom__["Route"], {
-              path: '/',
-              exact: true,
-              render: function render() {
-                return __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-                  'div',
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 54
-                    }
-                  },
-                  'Is home'
-                );
-              },
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 51
-              }
-            }),
-            __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_react_router_dom__["Route"], {
-              path: '/about',
-              exact: true,
-              render: function render() {
-                return __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-                  'div',
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 59
-                    }
-                  },
-                  'Is count ',
-                  _this2.props.count
-                );
-              },
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 56
-              }
-            }),
-            __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_react_router_dom__["Route"], {
-              path: '/about/:component',
-              exact: true,
-              component: __WEBPACK_IMPORTED_MODULE_13__containers_About_container__["a" /* default */],
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 61
-              }
-            }),
-            __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_14_react_router_dom__["Route"], {
-              path: '/:error',
-              render: function render() {
-                return __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
-                  'div',
-                  {
-                    __source: {
-                      fileName: _jsxFileName,
-                      lineNumber: 68
-                    }
-                  },
-                  'Is Error'
-                );
-              },
-              __source: {
-                fileName: _jsxFileName,
-                lineNumber: 66
-              }
-            })
-          )
-        )
+        __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement('div', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49
+          }
+        })
       );
     }
   }], [{
@@ -1573,28 +1489,69 @@ var About = function (_React$Component) {
   __WEBPACK_IMPORTED_MODULE_6_babel_runtime_helpers_inherits___default()(About, _React$Component);
 
   function About() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     __WEBPACK_IMPORTED_MODULE_3_babel_runtime_helpers_classCallCheck___default()(this, About);
 
-    return __WEBPACK_IMPORTED_MODULE_5_babel_runtime_helpers_possibleConstructorReturn___default()(this, (About.__proto__ || __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_object_get_prototype_of___default()(About)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = __WEBPACK_IMPORTED_MODULE_5_babel_runtime_helpers_possibleConstructorReturn___default()(this, (_ref = About.__proto__ || __WEBPACK_IMPORTED_MODULE_2_babel_runtime_core_js_object_get_prototype_of___default()(About)).call.apply(_ref, [this].concat(args))), _this), _this.testPush = function () {
+      _this.props.history.push('/');
+    }, _this.testReplace = function () {
+      _this.props.history.replace('/');
+    }, _this.testGo = function () {
+      _this.props.history.go(-1);
+    }, _temp), __WEBPACK_IMPORTED_MODULE_5_babel_runtime_helpers_possibleConstructorReturn___default()(_this, _ret);
   }
 
   __WEBPACK_IMPORTED_MODULE_4_babel_runtime_helpers_createClass___default()(About, [{
     key: 'render',
     value: function render() {
-      console.log('About props', this.props);
+      // console.log('About props', this.props)
       return __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
         'div',
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 32
           }
         },
+        __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
+          'a',
+          { onClick: this.testPush, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 33
+            }
+          },
+          'testPush'
+        ),
+        __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
+          'a',
+          { onClick: this.testReplace, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 34
+            }
+          },
+          'testReplace'
+        ),
+        __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
+          'a',
+          { onClick: this.testGo, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 35
+            }
+          },
+          'testGo'
+        ),
         __WEBPACK_IMPORTED_MODULE_7_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_8_antd__["Button"],
           { onClick: this.props.increment, type: 'primary', __source: {
               fileName: _jsxFileName,
-              lineNumber: 21
+              lineNumber: 36
             }
           },
           '+'
@@ -1604,7 +1561,7 @@ var About = function (_React$Component) {
           __WEBPACK_IMPORTED_MODULE_8_antd__["Button"],
           { onClick: this.props.decrement, type: 'primary', __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 38
             }
           },
           '-'
@@ -1614,10 +1571,10 @@ var About = function (_React$Component) {
   }], [{
     key: 'getInitialProps',
     value: function () {
-      var _ref2 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref) {
-        var req = _ref.req,
-            res = _ref.res,
-            match = _ref.match;
+      var _ref3 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(_ref2) {
+        var req = _ref2.req,
+            res = _ref2.res,
+            match = _ref2.match;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -1636,7 +1593,7 @@ var About = function (_React$Component) {
       }));
 
       function getInitialProps(_x) {
-        return _ref2.apply(this, arguments);
+        return _ref3.apply(this, arguments);
       }
 
       return getInitialProps;
@@ -1763,7 +1720,12 @@ var rootReducer = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__App__ = __webpack_require__("./src/App.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__("react-router-dom");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__);
-var _jsxFileName = '/Users/tj/Projects/kpc-react-starter-kit/graphql-tutorial/example01/src/routes.js';
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__containers_About_container__ = __webpack_require__("./src/containers/About/container.js");
+var _jsxFileName = '/Users/tj/Projects/kpc-react-starter-kit/graphql-tutorial/example01/src/routes.js',
+    _this = this;
+
+
+
 
 
 
@@ -1773,7 +1735,7 @@ var Register = function Register() {
     {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 6
+        lineNumber: 8
       }
     },
     'Register Page .... (',
@@ -1781,7 +1743,7 @@ var Register = function Register() {
       __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["NavLink"],
       { to: '/', __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 8
         }
       },
       'Home'
@@ -1791,11 +1753,43 @@ var Register = function Register() {
 };
 /* harmony default export */ __webpack_exports__["a"] = ([{
   path: '/register',
-  exact: true,
   component: Register
 }, {
   path: '/',
-  component: __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */]
+  component: __WEBPACK_IMPORTED_MODULE_1__App__["a" /* default */],
+  routes: [{
+    path: '/about',
+    render: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          }
+        },
+        'Is count ',
+        _this.props.count
+      );
+    }
+  }, {
+    path: '/about/:component',
+    component: __WEBPACK_IMPORTED_MODULE_3__containers_About_container__["a" /* default */]
+  }]
+}, {
+  path: '/:error',
+  render: function render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      },
+      'Is Error'
+    );
+  }
 }]);
 
 /***/ }),

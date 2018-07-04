@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
-import { Layout, Button, Row, Col, Menu, Breadcrumb } from 'antd'
+import { Layout, Row, Col, Menu, Breadcrumb } from 'antd'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -10,9 +10,6 @@ import { loadUser as loadUserAction } from '../reducers/user-list-reducer'
 import RouteWithSubRoutes from '../../components/RouteWithSubRoutes'
 
 const {
-  Header,
-  Footer,
-  Sider,
   Content,
 } = Layout
 
@@ -63,7 +60,6 @@ class UserManagerView extends Component {
 
   render() {
     const { routes } = this.props
-
     return (
       <Layout>
         {/* <Header style={{ backgroundColor: '#F8F9F9', height: 'auto' }}>

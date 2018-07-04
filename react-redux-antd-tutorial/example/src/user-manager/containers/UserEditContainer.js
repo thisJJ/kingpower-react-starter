@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { PropTypes } from 'prop-types'
 import { compose, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
@@ -8,33 +9,37 @@ import {
   Input
 } from 'antd'
 
-import { addUser } from '../reducers/user-list-reducer'
+import { editUser } from '../reducers/user-list-reducer'
 
 const { Item: FormItem } = Form
 const { TextArea } = Input
 
-const mapStateToProps = state => ({
-  userList: state.userManager.userList.userList
-})
+const mapStateToProps = (state, props) => {
+  const { params: { key } } = props.match
+  const userList = state.userManager.userList.userList
+  const user = userList.find((userList) => userList.key === key) 
+  return { user }
+}
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addUser
+  editUser
 }, dispatch)
 
 class UserAddContainer extends Component {
+  
   static propTypes = {
+    user: PropTypes.object
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const { form, addUser, history } = this.props
+    const { form, editUser, match: {params :{ key } }, history } = this.props
 
     form.validateFields((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
-
-        addUser(values)
+        values.key = key
+        editUser(values)
         history.push('/user-manager/list')
       }
     })
@@ -42,7 +47,6 @@ class UserAddContainer extends Component {
 
   render() {
     const { form: { getFieldDecorator } } = this.props
-
     return (
       <Form onSubmit={this.handleSubmit}>
         <FormItem
@@ -75,7 +79,7 @@ class UserAddContainer extends Component {
         <FormItem>
           <Button
             type="primary"
-            htmlType="submit" >Add</Button>
+            htmlType="submit" >Edit</Button>
         </FormItem>
       </Form>
     )
@@ -88,5 +92,25 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  Form.create()
+  Form.create({
+    mapPropsToFields(props) {
+      if(props.user){
+        return {
+          firstName: Form.createFormField({
+            ...props.user,
+            value: props.user.firstName,
+          }),
+          lastName: Form.createFormField({
+            ...props.user,
+            value: props.user.lastName,
+          }),
+          address: Form.createFormField({
+            ...props.user,
+            value: props.user.address,
+          }),
+        }
+      }
+      else return{}
+    }
+  })
 )(UserAddContainer)

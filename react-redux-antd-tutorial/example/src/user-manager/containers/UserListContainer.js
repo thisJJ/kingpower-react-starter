@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
-import { Table, Icon, Divider, Row, Col, Button } from 'antd'
+import { Table, Divider, Row, Col, Button } from 'antd'
 
-const { Column, ColumnGroup } = Table
+const { Column } = Table
 
 const mapStateToProps = state => ({
   userList: state.userManager.userList.userList
@@ -29,7 +29,7 @@ class UserListContainer extends Component {
 
   render() {
     const { userList } = this.props
-
+    console.log('##### UserListContainer : ',this.props)
     return (
       <Row style={{ marginTop: '10px' }} >
         <Col span={12} offset={6} style={{ marginBottom: '10px' }}>
@@ -61,7 +61,7 @@ class UserListContainer extends Component {
                 <span>
                   <a href="javascript:;">Action 一 {record.name}</a>
                   <Divider type="vertical" />
-                  <a href="javascript:;">Edit</a>
+                  <a href={'/user-manager/edit/' + record.key }>Edit</a>
                   <Divider type="vertical" />
                   <a href="javascript:;">Delete</a>
                   <Divider type="vertical" />

@@ -2,6 +2,7 @@ import shortid from 'shortid'
 
 export const LOAD_USER_LIST = 'user-manager/user-list/LOAD_USER_LIST'
 export const ADD_USER = 'user-manager/user-list/ADD_USER'
+export const EDIT_USER = 'user-manager/user-list/EDIT_USER'
 
 const apiData = [{
   key: '1',
@@ -41,6 +42,22 @@ export default function reducer(state = initialState, action) {
         ...state,
         userList: userList,
       }
+    case EDIT_USER:{
+      const { user } = action.payload
+      const { userList } = state
+
+      return {
+        userList : Object.assign([], 
+          userList.map(users => {
+            if(users.key == user.key) {
+              return user 
+            }
+            else return users
+          }) 
+        )
+      
+      }
+    }
     default:
       return state
   }
@@ -59,6 +76,18 @@ export const addUser = (user) => ({
   payload: {
     user: {
       key: shortid.generate(),
+      firstName: user.firstName,
+      lastName: user.lastName,
+      address: user.address || ''
+    }
+  }
+})
+
+export const editUser = (user) => ({
+  type: EDIT_USER,
+  payload: {
+    user: {
+      key: user.key,
       firstName: user.firstName,
       lastName: user.lastName,
       address: user.address || ''

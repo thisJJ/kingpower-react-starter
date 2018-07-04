@@ -47,8 +47,8 @@ class UserEditContainer extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <FormItem
           label="First Name"
-          labelCol={{ span: 5 }}
-          wrapperCol={{ span: 12 }}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 5 }}
         >
           {getFieldDecorator('firstName', {
             rules: [{ required: true, message: 'Please input your firstName!' }],
@@ -59,8 +59,8 @@ class UserEditContainer extends React.Component {
         </FormItem>
         <FormItem
           label="Last Name"
-          labelCol={{ span: 5 }}
-          wrapperCol={{ span: 12 }}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 5 }}
         >
           {getFieldDecorator('lastName', {
             rules: [{
@@ -73,15 +73,15 @@ class UserEditContainer extends React.Component {
         <FormItem
           label="Address"
           autoComplete="ad"
-          labelCol={{ span: 5 }}
-          wrapperCol={{ span: 12 }}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 8 }}
         >
           {getFieldDecorator('address', {})(
             <TextArea rows="6" autoComplete="address"/>
           )}
         </FormItem>
         <FormItem
-          wrapperCol={{ span: 12, offset: 5 }}
+          wrapperCol={{ span: 12, offset: 8 }}
         >
           <Button type="primary" htmlType="submit">
             Submit

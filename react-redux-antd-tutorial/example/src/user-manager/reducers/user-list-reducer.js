@@ -3,6 +3,7 @@ import shortid from 'shortid'
 export const LOAD_USER_LIST = 'user-manager/user-list/LOAD_USER_LIST'
 export const ADD_USER = 'user-manager/user-list/ADD_USER'
 export const EDIT_USER = 'user-manager/user-list/EDIT_USER'
+export const DELETE_USER = 'user-manager/user-list/DELETE_USER'
 
 const apiData = [{
   key: '1',
@@ -58,6 +59,17 @@ export default function reducer(state = initialState, action) {
       
       }
     }
+    case DELETE_USER:{
+      const { key } = action.payload
+      const { userList } = state
+
+      return {
+        userList : userList.filter(function(el) {
+          return el.key !== key 
+        })
+      }
+  
+    }
     default:
       return state
   }
@@ -92,5 +104,12 @@ export const editUser = (user) => ({
       lastName: user.lastName,
       address: user.address || ''
     }
+  }
+})
+
+export const deleteList = (key) => ({
+  type: DELETE_USER,
+  payload:{
+    key: key
   }
 })

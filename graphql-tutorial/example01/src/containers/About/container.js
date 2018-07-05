@@ -30,9 +30,9 @@ class About extends React.Component {
     // console.log('About props', this.props)
     return (
       <div>
-        <a onClick={ this.testPush }>testPush</a>
-        <a onClick={ this.testReplace }>testReplace</a>
-        <a onClick={ this.testGo }>testGo</a>
+        <a onClick={ this.testPush }>testPush</a><br />
+        <a onClick={ this.testReplace }>testReplace</a><br />
+        <a onClick={ this.testGo }>testGo</a><br />
         <Button onClick={ this.props.increment } type="primary">+</Button>
         { this.props.count }
         <Button onClick={ this.props.decrement } type="primary">-</Button>

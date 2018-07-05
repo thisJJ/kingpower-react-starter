@@ -1,7 +1,7 @@
 import React from 'react'
 import App from '~/App'
 import { NavLink } from 'react-router-dom';
-import About from '~/containers/About/container'
+
 
 const Register = () => {
   return(
@@ -16,16 +16,6 @@ export default [
   {
     path: '/',
     component: App,
-    routes: [
-      {
-        path: '/about',
-        render: () => <div>Is count { this.props.count }</div>
-      },
-      {
-        path: '/about/:component',
-        component: About
-      },
-    ]
   },
   {
     path: '/:error',

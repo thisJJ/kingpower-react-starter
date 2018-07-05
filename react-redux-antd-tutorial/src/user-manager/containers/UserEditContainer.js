@@ -3,31 +3,37 @@ import { compose, bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
-import { addUser } from '../reducers/user-list-reducer'
+import { getUser, updateUser } from '../reducers/user-list-reducer'
 import FormFillUser from '../../components/FormFillUser'
 import {
   Form,
 } from 'antd'
 const mapStateToProps = state => ({
-  userList: state.userManager.userList.userList
+  userList: state.userManager.userList.userList,
+  user: state.userManager.userList.user
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  addUser
+  getUser,
+  updateUser
 }, dispatch)
 
-class UserAddContainer extends Component {
+class UserEditContainer extends Component {
   static propTypes = {
+  }
+  componentDidMount(){
+    const { getUser, match:{ params: { key } } } = this.props
+    getUser(key)
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const { form, addUser, history } = this.props
+    const { form, updateUser, history } = this.props
     form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
 
-        addUser(values)
+        updateUser(values)
         history.push('/user-manager/list')
       }
     })
@@ -52,5 +58,26 @@ export default compose(
     mapStateToProps,
     mapDispatchToProps
   ),
-  Form.create()
-)(UserAddContainer)
+  Form.create({
+    mapPropsToFields(props) {
+        if (!props.user) {
+          return {}
+        }
+
+        return {
+          firstName: Form.createFormField({
+            ...props.user,
+            value: props.user.firstName
+          }),
+          lastName: Form.createFormField({
+            ...props.user,
+            value: props.user.lastName
+          }),
+          address: Form.createFormField({
+            ...props.user,
+            value: props.user.address
+          }),
+        }
+    }
+  })
+)(UserEditContainer)

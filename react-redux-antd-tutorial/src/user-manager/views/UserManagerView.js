@@ -36,14 +36,13 @@ class UserManagerView extends Component {
     const { location } = this.props
 
     const paths = location.pathname.split('/')
-    const path = paths[paths.length - 1]
-
+    const path = paths[paths.indexOf("user-manager") + 1]
     return (
       <Breadcrumb separator=">">
         <Breadcrumb.Item>
           <Link to="/">Home</Link>
         </Breadcrumb.Item>
-        { (path === 'list' || path === 'add') &&
+        { (path === 'list' || path === 'add' || path === 'edit') &&
           <Breadcrumb.Item>
             <Link to="/user-manager/list">
               User List
@@ -54,6 +53,13 @@ class UserManagerView extends Component {
           <Breadcrumb.Item>
             <Link to="/user-manager/add">
               Add New User
+            </Link>
+          </Breadcrumb.Item>
+        }
+        { path === 'edit' &&
+          <Breadcrumb.Item>
+            <Link to="/user-manager/edit">
+              Edit User
             </Link>
           </Breadcrumb.Item>
         }

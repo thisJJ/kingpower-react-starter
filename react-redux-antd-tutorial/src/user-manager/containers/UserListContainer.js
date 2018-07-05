@@ -4,13 +4,19 @@ import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
 import { Table, Icon, Divider, Row, Col, Button } from 'antd'
 
+import { deleteUserByKey } from '../reducers/user-list-reducer'
+import { bindActionCreators } from 'redux';
+
+
 const { Column, ColumnGroup } = Table
 
 const mapStateToProps = state => ({
   userList: state.userManager.userList.userList
 })
 
-const mapDispatchToProps = null
+const mapDispatchToProps = dispatch => bindActionCreators({
+  deleteUserByKey,
+},dispatch)
 
 class UserListContainer extends Component {
   static propTypes = {
@@ -24,8 +30,14 @@ class UserListContainer extends Component {
         ]),
         address: PropTypes.string
       }).isRequired
-    )
+    ),
+    deleteUserByKey: PropTypes.func,
   }
+
+  handleDelete = ((id) => {
+    const { deleteUserByKey } = this.props
+    deleteUserByKey(id)
+  })
 
   render() {
     const { userList } = this.props
@@ -57,16 +69,17 @@ class UserListContainer extends Component {
             <Column
               title="Action"
               key="action"
-              render={(text, record) => (
+              render={(text, record) => {
+                return(
                 <span>
                   <a href="javascript:;">Action 一 {record.name}</a>
                   <Divider type="vertical" />
-                  <a href="javascript:;">Edit</a>
+                  <Link to={`/user-manager/edit/${ record.key }`} >Edit</Link>
                   <Divider type="vertical" />
-                  <a href="javascript:;">Delete</a>
+                  <a href="javascript:;" onClick={ () => this.handleDelete(record.key) }>Delete</a>
                   <Divider type="vertical" />
                 </span>
-              )}
+              )}}
             />
           </Table>
         </Col>

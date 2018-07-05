@@ -1,0 +1,26 @@
+const preProd = {
+  env: 'pre-prod',
+  hostname: 'pp-web.kingpowerclick.com',
+  port: 9000,
+  protocol: 'https',
+  apiEndpoint: 'https://pp-api.kingpowerclick.com',
+  facebookAppId: '1601307813265666',
+  gtmId: 'GTM-5P47RKW',
+  paymentOmisePublicKey: 'pkey_5aiym0iiznb4u2z35yu',
+  paymentOmise: 'https://pp-payment-gateway.kingpowerclick.com/paymentgateway/charges/omise',
+  paymentAlipay: 'https://pp-payment-gateway.kingpowerclick.com/paymentgateway/charges/alipay',
+  paymentTransactionStatus: 'https://pp-payment-gateway.kingpowerclick.com/paymentgateway/transactions',
+  clientSecret: '',
+  errorMessageUrl: 'https://s3-ap-southeast-1.amazonaws.com/kpc-prod-frontend-resource/errorMessages.json',
+  googleVerificationToken: 'kbkOruycFh6NqTSq3Tr8ErS0Fb8hcttP-FD97dRcLho',
+  androidAppId: 'com.kingpower.online',
+  iOSAppId: '1286637638',
+  sentryDNS: 'https://a8b3e43f61b54b13973aceef3822920e@sentry.kpc-dev.com/2',
+  webUrl: 'https://pp-web.kingpowerclick.com',
+  imageHostURL: 'https://s3-ap-southeast-1.amazonaws.com/kpc-prod-web-static/frontend/',
+  platform: 'Web',
+  micrositeResourceUrl: 'https://s3-ap-southeast-1.amazonaws.com/kpc-prod-frontend-resource/',
+  powerMagUrl: 'https://powermag.kingpower.com/wp-json/wp/v2/posts?categories=521&_embed',
+}
+
+module.exports = preProd

@@ -1,4 +1,5 @@
 describe('Test product page', function() {
+  
   it('Open home page', function() {
     cy.visit('http://localhost:3000')
   })

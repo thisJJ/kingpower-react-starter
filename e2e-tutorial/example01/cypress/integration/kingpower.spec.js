@@ -53,20 +53,24 @@ describe('Test kingpower', function() {
       .click({force: true, waitForAnimations: false, animationDistanceThreshold: 50})
     cy.get('#checkout-information-button-continue').click()
 
-    cy.get('#checkout-payment-method-credit-alipay-radio')
+    cy.get('#checkout-payment-credit-card-name-text').type('Thinnakrit')
+    cy.get('#checkout-payment-credit-card-number-text').type('4242424242424242')
+    cy.contains('12').click()
+    cy.get('#checkout-payment-order-summary-product-duty-fee-tag-label-delivery-1').click()
+    cy.contains('2022').click()
+    cy.get('#checkout-payment-credit-card-cvv-text').type('123')
+    
+
+    cy.get('#checkout-payment-confirm-button')
       .should('be.visible')
       .click({force: true, waitForAnimations: false, animationDistanceThreshold: 50})
-    cy.get('#checkout-payment-method-credit-alipay-radio').click()
+    cy.get('#checkout-payment-confirm-button').click()
 
     cy.get('#checkout-payment-placeorder-button')
       .should('be.visible')
       .click({force: true, waitForAnimations: false, animationDistanceThreshold: 50})
     cy.get('#checkout-payment-placeorder-button').click()
 
-    cy.get('#checkout-payment-confirm-button')
-      .should('be.visible')
-      .click({force: true, waitForAnimations: false, animationDistanceThreshold: 50})
-    cy.get('#checkout-payment-confirm-button').click()
 
   })
 })
